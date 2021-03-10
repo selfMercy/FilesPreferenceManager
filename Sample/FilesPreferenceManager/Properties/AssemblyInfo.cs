@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные с этой сборкой.
-[assembly: AssemblyTitle("SampleFPM")]
+[assembly: AssemblyTitle("FilesPreferenceManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SampleFPM")]
+[assembly: AssemblyProduct("FilesPreferenceManager")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID представляет идентификатор typelib, если этот проект доступен из модели COM
-[assembly: Guid("df1422a4-606d-42fd-b9a1-a2cbf006c2e1")]
+[assembly: Guid("639a8985-8794-4d58-a6d5-98aeb1cd6326")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

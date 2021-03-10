@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF1422A4-606D-42FD-B9A1-A2CBF006C2E1}</ProjectGuid>
+    <ProjectGuid>{639A8985-8794-4D58-A6D5-98AEB1CD6326}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SampleFPM</RootNamespace>
-    <AssemblyName>SampleFPM</AssemblyName>
+    <RootNamespace>FilesPreferenceManager</RootNamespace>
+    <AssemblyName>FilesPreferenceManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="File Preference Manager\FilesDownloadHandler.cs" />
-    <Compile Include="File Preference Manager\FilesValidityHandler.cs" />
-    <Compile Include="FilesPreferenceManager.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\FilesPreferenceManager.cs" />
+    <Compile Include="Source\PreferenceFilesDownloader.cs" />
+    <Compile Include="Source\PreferenceFilesReceiver.cs" />
+    <Compile Include="Source\PreferenceFilesValidator.cs" />
+    <Compile Include="Source\Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
