@@ -29,12 +29,12 @@ namespace FilesPreferenceManager
         /// If you need to get a list of injured files, then use this method
         /// </summary>
         /// <returns>List of injured files</returns>
-        public List<PreferenceFile> GetRequiredFiles() =>
+        public List<PreferenceFile> GetInjuredFiles() =>
             new PreferenceFilesValidator().ValidateFiles(SaveDirectory, new PreferenceFilesReceiver().Receive(AddressToFiles), ValidityMode);
 
         public void InitializeDownloadEngine()
         {
-            PreferenceFilesDownloader DownloadEngine = new PreferenceFilesDownloader(SaveDirectory, GetRequiredFiles());
+            PreferenceFilesDownloader DownloadEngine = new PreferenceFilesDownloader(SaveDirectory, GetInjuredFiles());
 
             ///TODO: Download tracker
             ///TODO: Deleting unnecessary files
