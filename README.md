@@ -2,7 +2,7 @@
 Assistant in downloading files and checking their integrity. As well as tracking downloads and deleting unnecessary files.
 
 # Sample
-    ```csharp
+    ```cs
     string SavePath = @"C:\Sample folder"; // The path to the folder for downloading and checking files.
     Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json"); // Link to json file, it is generated using PreferenceGenerator.php
 
