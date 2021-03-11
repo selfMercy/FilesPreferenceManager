@@ -9,7 +9,7 @@ namespace FilesPreferenceManager
     class PreferenceFilesReceiver
     {
         /// <summary>
-        /// The method allows you to get a json object from a web server
+        /// This method allows you to get a json object from a web server
         /// </summary>
         /// <param name="AddressToFiles">Direct address to json file</param>
         /// <returns>List of files from json object</returns>
