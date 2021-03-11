@@ -33,3 +33,10 @@ Assistant in downloading files and checking their integrity. As well as tracking
     // Declaring the main instance of the manager class and initializing the download engine.
     FilesPreferenceManager PreferenceManager = new FilesPreferenceManager(SavePath, AddressToJson, ValidityMode, PreferenceTracker);
     PreferenceManager.InitializeDownloadEngine();
+```csharp
+using (var x = new X())
+{
+    var y = "test";
+    var z = "test";
+}
+```
