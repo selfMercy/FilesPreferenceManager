@@ -8,7 +8,7 @@ namespace FilesPreferenceManager
     class PreferenceFilesValidator
     {
         /// <summary>
-        /// The method allows you to check the integrity of the files, the list of which it received
+        /// This method allows you to check the integrity of the files, the list of which it received
         /// </summary>
         /// <param name="SaveDirectory">File check root path</param>
         /// <param name="PreferenceFiles">List of preference files</param>
@@ -24,7 +24,7 @@ namespace FilesPreferenceManager
                 if (!File.Exists(Path.Combine(SaveDirectory, ValidityFile.Directory, ValidityFile.Name)))
                     continue;
 
-                //Hashing method is better, but sizing faster
+
                 if (ValidityMode == FileValidityMode.Sizing)
                 {
                     if (new FileInfo(Path.Combine(SaveDirectory, ValidityFile.Directory, ValidityFile.Name)).Length == ValidityFile.Size)
@@ -32,13 +32,13 @@ namespace FilesPreferenceManager
                 }
                 else if (ValidityMode == FileValidityMode.Hashing)
                 {
-                    MD5 crypto = MD5.Create();
-                    FileStream stream = File.OpenRead(Path.Combine(SaveDirectory, ValidityFile.Directory, ValidityFile.Name));
+                    MD5 Crypto = MD5.Create();
+                    FileStream Stream = File.OpenRead(Path.Combine(SaveDirectory, ValidityFile.Directory, ValidityFile.Name));
 
-                    byte[] hashcode = crypto.ComputeHash(stream);
-                    string hash = BitConverter.ToString(hashcode).Replace("-", string.Empty);
-
-                    if (hash == ValidityFile.Hash)
+                    byte[] Hashcode = Crypto.ComputeHash(Stream);
+                    string Hash = BitConverter.ToString(Hashcode).Replace("-", string.Empty);
+                    
+                    if (Hash == ValidityFile.Hash)
                         PreferenceFiles.Remove(ValidityFile);
                 }
             }
