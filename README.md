@@ -3,7 +3,8 @@ Assistant in downloading files and checking their integrity. As well as tracking
 
 # Sample
 
-    string SavePath = @"C:\Sample folder"; // The path to the folder for downloading and checking files.
+    // The path to the folder for downloading and checking files.
+    string SavePath = @"C:\Sample folder";
     
     // Link to json file, it is generated using PreferenceGenerator.php
     Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json");
