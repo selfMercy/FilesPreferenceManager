@@ -9,7 +9,8 @@ namespace FilesPreferenceManager
             string SavePath = @"C:\Sample folder";
             Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json");
 
-            FileValidityMode ValidityMode = FileValidityMode.Hashing; //Hashing is better, but sizing faster that hashing
+            //Hashing is better, but sizing faster than hashing
+            FileValidityMode ValidityMode = FileValidityMode.Hashing;
             
             FilesPreferenceManager PreferenceManager = new FilesPreferenceManager(SavePath, AddressToJson, ValidityMode);
             PreferenceManager.InitializeDownloadEngine();
