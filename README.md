@@ -31,6 +31,7 @@ PreferenceTracker.DownloadEngineProgressChanged += (s, e) => // Fires when new b
 };
 
 // Declaring the main instance of the manager class and initializing the download engine.
-FilesPreferenceManager PreferenceManager = new FilesPreferenceManager(SavePath, AddressToJson, ValidityMode, PreferenceTracker);
+FilesPreferenceManager PreferenceManager = 
+                       new FilesPreferenceManager(SavePath, AddressToJson, ValidityMode, PreferenceTracker);
 PreferenceManager.InitializeDownloadEngine();
 ```
