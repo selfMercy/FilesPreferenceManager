@@ -9,6 +9,7 @@ namespace FilesPreferenceManager
         private string SaveDirectory;
         private Uri AddressToFiles;
         private FileValidityMode ValidityMode;
+        private PreferenceTrackingHandler PreferenceTracker;
 
         /// <summary>
         /// Files preference manager allows you to check the integrity of files, download missing or injured ones, as well as delete unnecessary ones and track all this
@@ -16,11 +17,13 @@ namespace FilesPreferenceManager
         /// <param name="SaveDirectory">Root path for downloading and checking files</param>
         /// <param name="AddressToFiles">URL address to json file</param>
         /// <param name="ValidityMode">File check mode</param>
-        public FilesPreferenceManager(string SaveDirectory, Uri AddressToFiles, FileValidityMode ValidityMode)
+        /// <param name="PreferenceTracker"></param>
+        public FilesPreferenceManager(string SaveDirectory, Uri AddressToFiles, FileValidityMode ValidityMode, PreferenceTrackingHandler PreferenceTracker)
         {
             this.SaveDirectory = SaveDirectory;
             this.AddressToFiles = AddressToFiles;
             this.ValidityMode = ValidityMode;
+            this.PreferenceTracker = PreferenceTracker;
 
             Directory.CreateDirectory(SaveDirectory);
         }
@@ -30,13 +33,12 @@ namespace FilesPreferenceManager
         /// </summary>
         /// <returns>List of injured files</returns>
         public List<PreferenceFile> GetInjuredFiles() =>
-            new PreferenceFilesValidator().ValidateFiles(SaveDirectory, new PreferenceFilesReceiver().Receive(AddressToFiles), ValidityMode);
-
+            new PreferenceFilesValidator().ValidateFiles(SaveDirectory, new PreferenceFilesReceiver().Receive(AddressToFiles), ValidityMode, ref PreferenceTracker);
+        
         public void InitializeDownloadEngine()
         {
-            PreferenceFilesDownloader DownloadEngine = new PreferenceFilesDownloader(SaveDirectory, GetInjuredFiles());
+            PreferenceFilesDownloader DownloadEngine = new PreferenceFilesDownloader(SaveDirectory, GetInjuredFiles(), ref PreferenceTracker);
 
-            ///TODO: Download tracker
             ///TODO: Deleting unnecessary files
 
             DownloadEngine.Start();
