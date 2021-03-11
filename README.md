@@ -1,4 +1,4 @@
-# FilesPreferenceManager
+# Files Preference Manager
 Assistant in downloading files and checking their integrity.
 As well as tracking downloads and deleting unnecessary files.
 
