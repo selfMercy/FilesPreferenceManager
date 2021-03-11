@@ -19,17 +19,17 @@ namespace FilesPreferenceManager
 
             PreferenceTrackingHandler PreferenceTracker = new PreferenceTrackingHandler();
 
-            PreferenceTracker.DownloadEngineStatusChanged += (s, e) => // Fires when the download state changes.
+            PreferenceTracker.DownloadEngineStatusChanged += (s, e) => // When the download state changes.
             {
                 Console.WriteLine(string.Format($"Status: {e.DownloadStatus}"));
             };
 
-            PreferenceTracker.DownloadEngineFileChanged += (s, e) => // Fires when the next file starts downloading.
+            PreferenceTracker.DownloadEngineFileChanged += (s, e) => // When the next file starts downloading.
             {
                 Console.WriteLine(string.Format($"Download now: {Path.Combine(e.Directory, e.Name)}"));
             };
 
-            PreferenceTracker.DownloadEngineProgressChanged += (s, e) => // Fires when new bytes are received.
+            PreferenceTracker.DownloadEngineProgressChanged += (s, e) => // When new bytes are received.
             {
                 Console.WriteLine(string.Format($"Downloaded: {e.DownloadedSize} / {e.Size} | Percentage: {e.Percentage}"));
             };
