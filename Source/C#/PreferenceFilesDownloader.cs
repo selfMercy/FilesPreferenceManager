@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace FilesPreferenceManager
 {
@@ -39,7 +35,7 @@ namespace FilesPreferenceManager
 
         private void DownloadInjureFile(int index = 0)
         {
-            if (index + 1 >= PreferenceFiles.Count)
+            if (index >= PreferenceFiles.Count)
                 return;
             
             WebClient client = new WebClient();
