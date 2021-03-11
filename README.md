@@ -3,7 +3,7 @@ Assistant in downloading files and checking their integrity. As well as tracking
 
 # Sample
     string SavePath = @"C:\Sample folder"; // The path to the folder for downloading and checking files.
-    Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json"); // Link to json file, it is generated using [PreferenceGenerator](https://github.com/selfMercy/FilesPreferenceManager/blob/main/Source/PHP/PreferenceGenerator.php).
+    Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json"); // Link to json file, it is generated using PreferenceGenerator.php
 
     // There are two modes for checking files. (Hashing/Sizing)
     // The first is more accurate, but the second is much faster.
