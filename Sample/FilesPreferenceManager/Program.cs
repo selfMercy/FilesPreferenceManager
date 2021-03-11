@@ -11,7 +11,7 @@ namespace FilesPreferenceManager
             string SavePath = @"C:\Sample folder";
 
             // Link to json file, it is generated using PreferenceGenerator.php
-            Uri AddressToJson = new Uri("http://test1.ru/preferenceFiles.json");
+            Uri AddressToJson = new Uri("http://test1.ru/PreferenceFiles.json");
 
             // There are two modes for checking files. (Hashing/Sizing)
             // The first is more accurate, but the second is much faster.
